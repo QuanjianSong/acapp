@@ -1,0 +1,21 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.acwing.com/static/jquery-ui-dist/jquery-ui.min.css">
+    <script src="https://cdn.acwing.com/static/jquery/js/jquery-3.3.1.min.js"></script>
+    <!-- 添加css文件 -->
+    <link rel="stylesheet" href="{% static 'css/game.css' %}"> 
+    <!-- 添加js文件
+    <script src="{% static 'js/dist/game.js' %}"></script>  -->
+</head>
+
+<body style="margin: 0">
+    <div id="ac_game_12345678"></div>
+    <script type="module">
+        import {AcGame} from "{% static 'js/dist/game.js' %}";
+        $(document).ready(function() {
+            let ac_game = new AcGame("ac_game_12345678");
+        })
+        console.log("hello world")
+    </script>
+</body>
